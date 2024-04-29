@@ -4,14 +4,12 @@ FROM maven:3.8.4-jdk-11 AS builder
 WORKDIR /app
 
 COPY ./pom.xml .
-# COPY ./foo/my-project/pom.xml .
 # Cache dependencies for improving build time
 # (doesn't seem to work very well, review later)
 RUN mvn -B dependency:go-offline
 
 COPY ./src ./src
-# COPY ./foo/my-project/src ./src
-# RUN mvn -B package -DskipTests
+RUN mvn -B package -DskipTests
 
 
 # Use a Java base image
