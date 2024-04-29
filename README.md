@@ -2,6 +2,8 @@
 
 https://www.baeldung.com/java-commons-lang-3
 
+https://spring.io/guides/gs/maven
+
 
 mvn package --offline -DskipTests
 ls -l ~/.m2/repository
@@ -22,3 +24,7 @@ mvn archetype:generate -DgroupId=com.example -DartifactId=my-project -Darchetype
 
 Surefire report schema:
 https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd
+
+
+ASI SI QUE PASAN:
+docker run --rm -ti --mount type=bind,src=`pwd`/src,dst=/app/src correction-test-java /bin/bash
