@@ -1,0 +1,34 @@
+public class Banana {
+    private boolean peeled;
+    private boolean ripe;
+
+    public Banana() {
+        this.peeled = false;
+        this.ripe = false;
+    }
+
+    public boolean peel() {
+        this.peeled = true;
+        return this.peeled;
+    }
+
+    public boolean eat() {
+        if (!this.peeled) {
+            return false;
+        }
+        // Eating logic
+        return true;
+    }
+
+    public void ripen() {
+        this.ripe = true;
+    }
+
+    public void spoil() {
+        this.ripe = false;
+    }
+
+    public boolean isRipe() {
+        return this.ripe;
+    }
+}

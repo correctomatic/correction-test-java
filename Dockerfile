@@ -1,0 +1,33 @@
+# FROM maven:3.8.4-jdk-11 AS builder
+FROM maven:3.8.4-jdk-11 AS builder
+
+WORKDIR /app
+
+COPY pom.xml .
+#RUN mvn dependency:go-offline
+
+COPY ./src ./src
+#RUN mvn package -DskipTests
+
+
+# Use a Java base image
+# FROM ibmjava:8-sfj
+
+# # Set working directory
+# WORKDIR /usr/src/app
+
+# # Copy the test source code into the container
+# # COPY src/ src/
+
+# # Compile the test code
+# # RUN javac -cp junit-platform-console-standalone-1.8.2.jar -d . src/*.java
+
+# # Copy JAR with JUnit tests and any other necessary files into the container
+# # COPY your-junit-tests.jar .
+# COPY grade.py .
+
+# # Make the script executable
+# # RUN chmod +x run_tests.sh
+
+# # Set the entry point script
+# # ENTRYPOINT ["./run_tests.sh"]
