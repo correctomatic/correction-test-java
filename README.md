@@ -4,6 +4,9 @@ export CLASSPATH=$CLASSPATH:/home/appnetix/LOG4J_HOME/
  docker run --rm -ti --mount type=bind,src=./ejemplos/ejemplo1,dst=/app ibmjava:8-sdk
 
 
+docker build -t correction-test-java .
+
+docker run --rm correction-test-java
 
 
 https://www.baeldung.com/java-commons-lang-3
