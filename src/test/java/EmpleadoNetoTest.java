@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.api.DisplayName;
 
 public class EmpleadoNetoTest {
 
@@ -22,6 +23,7 @@ public class EmpleadoNetoTest {
 
     @ParameterizedTest
     @MethodSource("valores")
+    @DisplayName("El programa no calcula bien el salario neto")
     public void CalculaSalarioNE(float entrada, float salida) throws BRException {
         EmpleadoBR instance = new EmpleadoBR();
         float result = instance.calculaSalarioNeto(entrada);

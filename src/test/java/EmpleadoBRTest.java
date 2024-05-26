@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.api.DisplayName;
 
 public class EmpleadoBRTest {
 
@@ -27,6 +28,7 @@ public class EmpleadoBRTest {
 
     @ParameterizedTest
     @MethodSource("valores")
+    @DisplayName("El programa no calcula bien el salario bruto")
     public void CalculaSalarioBruto(TipoEmpleado tipo, float ventaMes, float horasExtra, float expResult) throws BRException {
         EmpleadoBR instance = new EmpleadoBR();
         float result = instance.calculaSalarioBruto(tipo, ventaMes, horasExtra);
@@ -34,6 +36,7 @@ public class EmpleadoBRTest {
     }
 
     @Test
+    @DisplayName("El cálculo con un salario nulo debe lanzar una excepción")
     public void CalculaSalarioNulo() {
         EmpleadoBR instance = new EmpleadoBR();
         assertThrows(BRException.class, () -> {

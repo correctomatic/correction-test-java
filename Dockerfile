@@ -27,7 +27,15 @@ RUN curl -L -o /app/junit-platform-console-standalone.jar https://repo1.maven.or
 
 # Stage 2: Create the runtime image
 # Need jdk because we need to compile the student's code
-FROM openjdk:11-jdk-slim
+# FROM openjdk:11-jdk-slim
+# This image is smaller than the openjdk:11-jdk-slim image
+FROM bellsoft/liberica-openjdk-alpine-musl:22-cds
+
+
+# TMP: install bash
+RUN apk add --update \
+    bash \
+    && rm -rf /var/cache/apk/*
 
 WORKDIR /app
 

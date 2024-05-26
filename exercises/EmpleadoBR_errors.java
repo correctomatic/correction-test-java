@@ -24,7 +24,7 @@ class BRException extends Exception {
 
 }
 
-public class EmpleadoBR_removethis {
+public class EmpleadoBR {
    //private String nombre;
    //otros atributos
     float calculaSalarioBruto(TipoEmpleado tipo, float ventasMes, float horasExtra)
@@ -46,14 +46,14 @@ public class EmpleadoBR_removethis {
             salarioBase += 200;
         }
         salarioBase += horasExtra * 20;
-        return salarioBase;
+        return salarioBase * 5;
     }
 
     public float calculaSalarioNeto(float salarioBruto) throws BRException
     {
         float retencion = 0.0f;
 
-        if (salarioBruto < 0) {
+        if (salarioBruto < -100) {
             throw new BRException("El salario bruto debe ser positivo");
         }
         if (salarioBruto >= 1000 && salarioBruto < 1500) {
