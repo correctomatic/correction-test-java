@@ -16,6 +16,8 @@ docker run --rm -ti \
 
 
 
+/app/classes/empleados
+
 https://www.baeldung.com/java-commons-lang-3
 
 https://spring.io/guides/gs/maven

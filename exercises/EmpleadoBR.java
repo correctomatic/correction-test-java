@@ -31,28 +31,22 @@ public class EmpleadoBR {
             throws BRException {
         int salarioBase;
 
-        return 999.9f;
-
-        // System.out.println("*********************************");
-        // System.out.println("Tipo: " + tipo + " Ventas: " + ventasMes + " Horas: " + horasExtra);
-        // System.out.println("*********************************");
-
-        // if ((tipo == null || ventasMes < 0) || horasExtra < 0) {
-        //     throw new BRException("Datos de nómina erróneos");
-        // }
-        // if (tipo == TipoEmpleado.vendedor) {
-        //     salarioBase = 1000;
-        // } else {
-        //     salarioBase = 1500;
-        // }
-        // if (ventasMes >= 1000 && ventasMes < 1500) {
-        //     salarioBase += 100;
-        // }
-        // if (ventasMes >= 1500) {
-        //     salarioBase += 200;
-        // }
-        // salarioBase += horasExtra * 20;
-        // return salarioBase;
+        if ((tipo == null || ventasMes < 0) || horasExtra < 0) {
+            throw new BRException("Datos de nómina erróneos");
+        }
+        if (tipo == TipoEmpleado.vendedor) {
+            salarioBase = 1000;
+        } else {
+            salarioBase = 1500;
+        }
+        if (ventasMes >= 1000 && ventasMes < 1500) {
+            salarioBase += 100;
+        }
+        if (ventasMes >= 1500) {
+            salarioBase += 200;
+        }
+        salarioBase += horasExtra * 20;
+        return salarioBase;
     }
 
     public float calculaSalarioNeto(float salarioBruto) throws BRException

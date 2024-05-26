@@ -43,5 +43,5 @@ COPY run_tests.sh .
 # Ensure the script is executable
 RUN chmod +x run_tests.sh
 
-# # Entry point to run the tests
-# CMD ["./run_tests.sh"]
+# Entry point to run the tests
+CMD ["./run_tests.sh"]

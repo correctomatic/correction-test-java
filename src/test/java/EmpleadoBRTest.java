@@ -28,7 +28,6 @@ public class EmpleadoBRTest {
     @ParameterizedTest
     @MethodSource("valores")
     public void CalculaSalarioBruto(TipoEmpleado tipo, float ventaMes, float horasExtra, float expResult) throws BRException {
-        System.out.println("El Salario Bruto es de " + expResult);
         EmpleadoBR instance = new EmpleadoBR();
         float result = instance.calculaSalarioBruto(tipo, ventaMes, horasExtra);
         assertEquals(expResult, result, 0.0);
