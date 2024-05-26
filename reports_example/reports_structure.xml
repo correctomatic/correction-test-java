@@ -1,0 +1,25 @@
+<!-- Segun ChatGPT -->
+<testsuites>
+  <testsuite name="YourTestSuiteName" tests="3" skipped="1" failures="1" errors="0" timestamp="2024-05-26T10:00:00" hostname="localhost" time="0.123">
+      <properties>
+          <property name="java.vendor" value="Oracle Corporation"/>
+          <property name="java.version" value="1.8.0_131"/>
+          <!-- more properties -->
+      </properties>
+      <testcase classname="com.example.YourTestClass" name="testMethod1" time="0.001">
+          <failure message="expected [true] but found [false]" type="AssertionError">
+              <![CDATA[junit.framework.AssertionFailedError: expected [true] but found [false]
+              at com.example.YourTestClass.testMethod1(YourTestClass.java:23)]]>
+          </failure>
+      </testcase>
+      <testcase classname="com.example.YourTestClass" name="testMethod2" time="0.002">
+          <!-- successful test case -->
+      </testcase>
+      <testcase classname="com.example.YourTestClass" name="testMethod3" time="0.003">
+          <skipped/>
+      </testcase>
+      <system-out><![CDATA[system out output]]></system-out>
+      <system-err><![CDATA[system err output]]></system-err>
+  </testsuite>
+  <!-- more testsuites -->
+</testsuites>

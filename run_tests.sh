@@ -39,7 +39,10 @@ log "Running the tests..."
 
 # Run the JUnit Console Launcher to execute the tests
 java -jar junit-platform-console-standalone.jar --class-path $CLASSPATH --scan-class-path --details=tree > "$RESULT_FILE"
-# java -jar junit-platform-console-standalone.jar --class-path $CLASSPATH --scan-class-path --details=tree
+
+# This generates the test reports as XML files
+# The TEST-junit-jupiter.xml contains the results of the tests, TEST-junit-vintage.xml contains the results of the tests that use JUnit 4
+java -jar junit-platform-console-standalone.jar --class-path $CLASSPATH --scan-class-path --details=tree --reports-dir=test-reports
 
 # Check if tests were successful
 if grep -q "Test run finished after" "$RESULT_FILE"; then

@@ -37,6 +37,11 @@ RUN apk add --update \
     bash \
     && rm -rf /var/cache/apk/*
 
+# Install Python and necessary dependencies
+# Python packages are py3-pip, py3-numpy, py3-scipy, py3-matplotlib, py3-pandas, py3-nltk...
+RUN apk add --update python3 \
+    && rm -rf /var/cache/apk/*
+
 WORKDIR /app
 
 # Copy the compiled classes and test classes from the builder stage
@@ -47,6 +52,8 @@ COPY --from=builder /app/junit-platform-console-standalone.jar /app/junit-platfo
 
 # Copy the script to run tests
 COPY run_tests.sh .
+# Python script to run the tests
+COPY run_tests.py .
 
 # Ensure the script is executable
 RUN chmod +x run_tests.sh

@@ -30,6 +30,12 @@ docker run --rm -ti \
   correction-test-java
 
 
+docker run --rm -ti \
+  -v `pwd`/exercises/EmpleadoBR_errors.java:/tmp/exercise \
+  -v `pwd`/run_tests.sh:/app/src/run_tests.sh \
+  -v `pwd`/run_tests.py:/app/src/run_tests.py \
+  correction-test-java /bin/bash
+
 
 
 # Run Tests: Run your tests using the mvn test command. S
@@ -51,6 +57,7 @@ https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report
 
 two stages openjdk:11-jdk-slim                          - 428MB
 two stages bellsoft/liberica-openjdk-alpine-musl:22-cds - 151MB
+two stages bellsoft... + python                         - 193MB
 
 
 
