@@ -12,24 +12,6 @@ import org.junit.jupiter.params.provider.Arguments;
 
 public class EmpleadoBRTest {
 
-    private TipoEmpleado tipo;
-    private float ventaMes;
-    private float horasExtra;
-    private float expResult; // variable para el resultado esperado
-
-    /**
-     *
-     * @param tipo
-     * @param ventaMes
-     * @param horasExtra
-     */
-    public EmpleadoBRTest (TipoEmpleado tipo, float ventaMes, float horasExtra, float expResult) {
-        this.tipo = tipo;
-        this.ventaMes = ventaMes;
-        this.horasExtra = horasExtra;
-        this.expResult = expResult;
-    }
-
     public static Stream<Arguments> valores() {
         return Stream.of(
             Arguments.of(TipoEmpleado.vendedor, 2000, 8, 1360.0f),

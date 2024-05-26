@@ -5,11 +5,13 @@ CLASSPATH=$(find /app/dependency -type f -name "*.jar" | tr '\n' ':')/app/classe
 RESULT_FILE=/tmp/test_results.txt
 
 # Compile the student's code
-# cp /tmp/exercise /app/src/EmpleadoBR.java
-# javac -cp $CLASSPATH /app/src/EmpleadoBR.java
+mkdir /app/src
+cp /tmp/exercise /app/src/EmpleadoBR.java
+javac -cp $CLASSPATH /app/src/EmpleadoBR.java
 
 # Run the JUnit Console Launcher to execute the tests
-java -jar junit-platform-console-standalone.jar --class-path $CLASSPATH --scan-class-path --details=tree > "$RESULT_FILE"
+#java -jar junit-platform-console-standalone.jar --class-path $CLASSPATH --scan-class-path --details=tree > "$RESULT_FILE"
+java -jar junit-platform-console-standalone.jar --class-path $CLASSPATH --scan-class-path --details=tree
 
 # Check if tests were successful
 if grep -q "Test run finished after" "$RESULT_FILE"; then
