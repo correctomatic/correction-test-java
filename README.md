@@ -15,6 +15,11 @@ docker run --rm -ti \
   correction-test-java /bin/sh
 
 
+docker run --rm -ti \
+  -v `pwd`/exercises/EmpleadoBR_compile_error.java:/tmp/exercise \
+  -v `pwd`/run_tests.sh:/app/src/run_tests.sh \
+  correction-test-java
+
 
 /app/classes/empleados
 

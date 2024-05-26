@@ -8,14 +8,6 @@ import org.junit.jupiter.params.provider.Arguments;
 
 public class EmpleadoNetoTest {
 
-    private float entrada;
-    private float salida;
-
-    public EmpleadoNetoTest (float entrada, float salida) {
-        this.entrada = entrada;
-        this.salida = salida;
-    }
-
     public static Stream<Object[]> valores() {
         return Stream.of(
                 new Object[] { 2000, 1640 },
