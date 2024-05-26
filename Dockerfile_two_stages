@@ -1,6 +1,5 @@
 # Stage 1: Build the project using Maven
-# FROM maven:3.8.4-openjdk-11 AS builder
-FROM maven:3.9.6-eclipse-temurin-8-alpine AS builder
+FROM maven:3.8.4-openjdk-11 AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -15,12 +14,7 @@ RUN mvn test-compile
 RUN mvn dependency:copy-dependencies -DincludeScope=test
 
 # Install curl
-# RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-# Install curl (alpine version)
-RUN apk add --update \
-    curl \
-    && rm -rf /var/cache/apk/*
-
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Download the JUnit Platform Console Standalone JAR
 RUN curl -L -o /app/junit-platform-console-standalone.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.8.2/junit-platform-console-standalone-1.8.2.jar
@@ -43,5 +37,5 @@ COPY run_tests.sh .
 # Ensure the script is executable
 RUN chmod +x run_tests.sh
 
-# # Entry point to run the tests
-# CMD ["./run_tests.sh"]
+# Entry point to run the tests
+CMD ["./run_tests.sh"]

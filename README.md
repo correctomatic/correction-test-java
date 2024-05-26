@@ -8,6 +8,8 @@ docker build -t correction-test-java .
 
 docker run --rm correction-test-java
 
+docker run --rm -ti -v `pwd`/src:/app/src correction-test-java /bin/sh
+
 
 https://www.baeldung.com/java-commons-lang-3
 
