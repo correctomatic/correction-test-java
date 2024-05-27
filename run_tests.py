@@ -52,7 +52,10 @@ log("Running the tests...")
 
 # Run the JUnit Console Launcher to execute the tests
 test_command = [
-    'java', '-jar', 'junit-platform-console-standalone.jar', '--class-path', classpath, '--scan-class-path', '--details=tree'
+    'java', '-jar', 'junit-platform-console-standalone.jar',
+    '--class-path', classpath,
+    '--scan-class-path',
+    '--details=tree'
 ]
 
 test_command = [
@@ -60,7 +63,7 @@ test_command = [
     '--class-path', classpath,
     '--scan-class-path',
     '--details=tree',
-    f'--reports-dir=test-reports',
+    '--reports-dir=test-reports',
 ]
 
 def parse_junit_xml(file_path):

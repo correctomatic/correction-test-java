@@ -4,6 +4,10 @@
 # Binded tests reports
 test-reports/
 
+# Temp files
+tmp/
+.venv
+
 # Log files
 *.log
 
