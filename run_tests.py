@@ -22,7 +22,15 @@ log("Copying the student's code...")
 PACKAGE = 'empleados'
 FILE_PATH = f'/app/classes/{PACKAGE}'
 os.makedirs(FILE_PATH, exist_ok=True)
-subprocess.run(['cp', '/tmp/exercise', f'{FILE_PATH}/EmpleadoBR.java'], check=True)
+result = subprocess.run(['cp', '/tmp/exercise', f'{FILE_PATH}/EmpleadoBR.java'], check=True)
+if result.returncode != 0:
+    error_message = {
+        "success": False,
+        "error": "Failed to copy the student's code"
+    }
+    print(json.dumps(error_message))
+    # Exit with an error code, the correction failed
+    exit(1)
 
 log("Compiling the student's code...")
 
@@ -34,7 +42,6 @@ compile_command = [
 ]
 
 compile_result = subprocess.run(compile_command, stderr=subprocess.PIPE, text=True)
-
 if compile_result.returncode != 0:
     compile_errors = compile_result.stderr.replace(f'{FILE_PATH}/', '')
 
@@ -59,12 +66,24 @@ test_command = [
 ]
 
 test_command = [
-    'java', '-jar', 'junit-platform-console-standalone.jar',
+    'java', '-jar', 'BANANA junit-platform-console-standalone.jar',
     '--class-path', classpath,
     '--scan-class-path',
     '--details=tree',
     '--reports-dir=test-reports',
 ]
+
+
+with open(result_file, 'w') as f:
+    run_result = subprocess.run(test_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+print('*******************************')
+print(run_result.returncode)
+print('*******************************')
+# Check if tests were successful
+with open(result_file, 'r') as f:
+    results = f.read()
+
 
 def parse_junit_xml(file_path):
     tree = ET.parse(file_path)
@@ -87,24 +106,6 @@ def parse_junit_xml(file_path):
     num_failed_tests = len(failed_tests)
 
     return num_failed_tests, list(unique_failures)
-
-with open(result_file, 'w') as f:
-    run_result = subprocess.run(test_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-
-print(run_result.returncode)
-if run_result.returncode != 0:
-    error_message = {
-        "success": False,
-        "error": f"Test execution failed: {run_result.stderr + run_result.stdout}"
-    }
-    print(json.dumps(error_message))
-
-    # Exit with an OK code, since the container succeeded but the correction failed
-    exit(0)
-
-# Check if tests were successful
-with open(result_file, 'r') as f:
-    results = f.read()
 
 num_failed, failures =  parse_junit_xml('/app/test-reports/TEST-junit-jupiter.xml')
 print(f"Failed tests: {num_failed}")

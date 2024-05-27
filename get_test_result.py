@@ -25,7 +25,6 @@ def extract_display_name(text):
 
 
 # Print the results
-print(len(failed_tests_cdata))
 foo = list(set(map(extract_display_name, failed_tests_cdata)))
 # print(failed_tests_cdata[0])
 for cdata in foo:

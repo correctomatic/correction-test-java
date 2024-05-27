@@ -32,7 +32,7 @@ public class EmpleadoBR {
         int salarioBase;
 
         if ((tipo == null || ventasMes < 0) || horasExtra < 0) {
-            throw new BRException("Datos de nómina erróneos");
+            // throw new BRException("Datos de nómina erróneos");
         }
         if (tipo == TipoEmpleado.vendedor) {
             salarioBase = 1000;
@@ -63,7 +63,8 @@ public class EmpleadoBR {
             retencion = 0.18f;
         }
 
-        return salarioBruto * (1 - retencion);
+        // return salarioBruto * (1 - retencion);
+        return -100f;
     }
 
 }
