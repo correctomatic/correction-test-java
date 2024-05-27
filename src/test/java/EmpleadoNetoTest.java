@@ -21,7 +21,8 @@ public class EmpleadoNetoTest {
                 new Object[] { 0, 0 });
     }
 
-    @ParameterizedTest
+    // Workaround porque @DisplayName no está funcionando en el XML para @ParameterizedTest
+    @ParameterizedTest(name = "El programa no calcula bien el salario neto")
     @MethodSource("valores")
     @DisplayName("El programa no calcula bien el salario neto")
     public void CalculaSalarioNE(float entrada, float salida) throws BRException {

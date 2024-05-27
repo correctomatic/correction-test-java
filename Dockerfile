@@ -59,4 +59,5 @@ COPY run_tests.py .
 RUN chmod +x run_tests.sh
 
 # Entry point to run the tests
-CMD ["./run_tests.sh"]
+# CMD ["./run_tests.sh"]
+CMD ["python3", "run_tests.py"]
