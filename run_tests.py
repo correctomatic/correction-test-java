@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 import re
 
 
-DEBUG = 'S'
+DEBUG = 'N'
 
 def log(message):
     if DEBUG == 'S':

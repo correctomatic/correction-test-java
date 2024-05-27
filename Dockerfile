@@ -21,7 +21,6 @@ RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*
 
-
 # Download the JUnit Platform Console Standalone JAR
 RUN curl -L -o /app/junit-platform-console-standalone.jar https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.8.2/junit-platform-console-standalone-1.8.2.jar
 
@@ -30,7 +29,6 @@ RUN curl -L -o /app/junit-platform-console-standalone.jar https://repo1.maven.or
 # FROM openjdk:11-jdk-slim
 # This image is smaller than the openjdk:11-jdk-slim image
 FROM bellsoft/liberica-openjdk-alpine-musl:22-cds
-
 
 # TMP: install bash
 RUN apk add --update \
@@ -50,14 +48,8 @@ COPY --from=builder /app/target/test-classes /app/test-classes
 COPY --from=builder /app/target/dependency /app/dependency
 COPY --from=builder /app/junit-platform-console-standalone.jar /app/junit-platform-console-standalone.jar
 
-# Copy the script to run tests
-COPY run_tests.sh .
 # Python script to run the tests
 COPY run_tests.py .
 
-# Ensure the script is executable
-RUN chmod +x run_tests.sh
-
 # Entry point to run the tests
-# CMD ["./run_tests.sh"]
 CMD ["python3", "run_tests.py"]

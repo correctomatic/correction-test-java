@@ -9,7 +9,9 @@ docker build -t correction-test-java .
 
 ### Notes, commands to run the container
 
-docker run --rm correction-test-java
+docker run --rm \
+  -v `pwd`/exercises/EmpleadoBR.java:/tmp/exercise \
+  correction-test-java
 
 docker run --rm -ti -v `pwd`/src:/app/src correction-test-java /bin/sh
 
