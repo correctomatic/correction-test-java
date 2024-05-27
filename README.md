@@ -20,20 +20,22 @@ docker run --rm -ti \
 
 docker run --rm -ti \
   -v `pwd`/exercises/EmpleadoBR_compile_error.java:/tmp/exercise \
-  -v `pwd`/run_tests.sh:/app/src/run_tests.sh \
+  -v `pwd`/run_tests.sh:/app/run_tests.sh \
   correction-test-java
 
 
 docker run --rm -ti \
   -v `pwd`/exercises/EmpleadoBR_errors.java:/tmp/exercise \
-  -v `pwd`/run_tests.sh:/app/src/run_tests.sh \
+  -v `pwd`/run_tests.sh:/app/run_tests.sh \
+  -v `pwd`/test-reports:/app/test-reports \
   correction-test-java
 
 
 docker run --rm -ti \
   -v `pwd`/exercises/EmpleadoBR_errors.java:/tmp/exercise \
-  -v `pwd`/run_tests.sh:/app/src/run_tests.sh \
-  -v `pwd`/run_tests.py:/app/src/run_tests.py \
+  -v `pwd`/run_tests.sh:/app/run_tests.sh \
+  -v `pwd`/run_tests.py:/app/run_tests.py \
+  -v `pwd`/test-reports:/app/test-reports \
   correction-test-java /bin/bash
 
 

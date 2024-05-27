@@ -1,64 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="JUnit Jupiter" tests="17" skipped="0" failures="8" errors="0" time="0.107" hostname="c0a5eb1e884c" timestamp="2024-05-26T16:17:14">
-<properties>
-<property name="file.encoding" value="UTF-8"/>
-<property name="file.separator" value="/"/>
-<property name="java.class.path" value="junit-platform-console-standalone.jar"/>
-<property name="java.class.version" value="66.0"/>
-<property name="java.home" value="/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64"/>
-<property name="java.io.tmpdir" value="/tmp"/>
-<property name="java.library.path" value="/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/lib/server:/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/lib:/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/../lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
-<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-<property name="java.runtime.version" value="22.0.1+10"/>
-<property name="java.specification.name" value="Java Platform API Specification"/>
-<property name="java.specification.vendor" value="Oracle Corporation"/>
-<property name="java.specification.version" value="22"/>
-<property name="java.vendor" value="BellSoft"/>
-<property name="java.vendor.url" value="https://bell-sw.com/"/>
-<property name="java.vendor.url.bug" value="https://bell-sw.com/support"/>
-<property name="java.version" value="22.0.1"/>
-<property name="java.version.date" value="2024-04-16"/>
-<property name="java.vm.compressedOopsMode" value="Zero based"/>
-<property name="java.vm.info" value="mixed mode, sharing"/>
-<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-<property name="java.vm.specification.version" value="22"/>
-<property name="java.vm.vendor" value="BellSoft"/>
-<property name="java.vm.version" value="22.0.1+10"/>
-<property name="jdk.debug" value="release"/>
-<property name="line.separator" value="
+	<properties>
+		<property name="file.encoding" value="UTF-8"/>
+		<property name="file.separator" value="/"/>
+		<property name="java.class.path" value="junit-platform-console-standalone.jar"/>
+		<property name="java.class.version" value="66.0"/>
+		<property name="java.home" value="/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64"/>
+		<property name="java.io.tmpdir" value="/tmp"/>
+		<property name="java.library.path" value="/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/lib/server:/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/lib:/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/../lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+		<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+		<property name="java.runtime.version" value="22.0.1+10"/>
+		<property name="java.specification.name" value="Java Platform API Specification"/>
+		<property name="java.specification.vendor" value="Oracle Corporation"/>
+		<property name="java.specification.version" value="22"/>
+		<property name="java.vendor" value="BellSoft"/>
+		<property name="java.vendor.url" value="https://bell-sw.com/"/>
+		<property name="java.vendor.url.bug" value="https://bell-sw.com/support"/>
+		<property name="java.version" value="22.0.1"/>
+		<property name="java.version.date" value="2024-04-16"/>
+		<property name="java.vm.compressedOopsMode" value="Zero based"/>
+		<property name="java.vm.info" value="mixed mode, sharing"/>
+		<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+		<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+		<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+		<property name="java.vm.specification.version" value="22"/>
+		<property name="java.vm.vendor" value="BellSoft"/>
+		<property name="java.vm.version" value="22.0.1+10"/>
+		<property name="jdk.debug" value="release"/>
+		<property name="line.separator" value="
 "/>
-<property name="native.encoding" value="UTF-8"/>
-<property name="os.arch" value="amd64"/>
-<property name="os.name" value="Linux"/>
-<property name="os.version" value="6.5.0-35-generic"/>
-<property name="path.separator" value=":"/>
-<property name="stderr.encoding" value="UTF-8"/>
-<property name="stdout.encoding" value="UTF-8"/>
-<property name="sun.arch.data.model" value="64"/>
-<property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/lib"/>
-<property name="sun.cpu.endian" value="little"/>
-<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-<property name="sun.java.command" value="junit-platform-console-standalone.jar --class-path /app/dependency/junit-jupiter-engine-5.10.2.jar:/app/dependency/hamcrest-2.2.jar:/app/dependency/apiguardian-api-1.1.2.jar:/app/dependency/opentest4j-1.3.0.jar:/app/dependency/junit-jupiter-api-5.10.2.jar:/app/dependency/junit-platform-commons-1.10.2.jar:/app/dependency/junit-jupiter-params-5.8.1.jar:/app/dependency/joda-time-2.9.2.jar:/app/dependency/junit-platform-engine-1.10.2.jar:/app/classes:/app/test-classes:/app --scan-class-path --details=tree --reports-dir=test-reports"/>
-<property name="sun.java.launcher" value="SUN_STANDARD"/>
-<property name="sun.jnu.encoding" value="UTF-8"/>
-<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-<property name="user.country" value="US"/>
-<property name="user.dir" value="/app"/>
-<property name="user.home" value="/root"/>
-<property name="user.language" value="en"/>
-<property name="user.name" value="root"/>
-<property name="user.timezone" value="GMT"/>
-</properties>
-<testcase name="CalculaSalarioNulo()" classname="empleados.EmpleadoBRTest" time="0.002">
-<system-out><![CDATA[
+		<property name="native.encoding" value="UTF-8"/>
+		<property name="os.arch" value="amd64"/>
+		<property name="os.name" value="Linux"/>
+		<property name="os.version" value="6.5.0-35-generic"/>
+		<property name="path.separator" value=":"/>
+		<property name="stderr.encoding" value="UTF-8"/>
+		<property name="stdout.encoding" value="UTF-8"/>
+		<property name="sun.arch.data.model" value="64"/>
+		<property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-22.0.1-bellsoft-x86_64/lib"/>
+		<property name="sun.cpu.endian" value="little"/>
+		<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+		<property name="sun.java.command" value="junit-platform-console-standalone.jar --class-path /app/dependency/junit-jupiter-engine-5.10.2.jar:/app/dependency/hamcrest-2.2.jar:/app/dependency/apiguardian-api-1.1.2.jar:/app/dependency/opentest4j-1.3.0.jar:/app/dependency/junit-jupiter-api-5.10.2.jar:/app/dependency/junit-platform-commons-1.10.2.jar:/app/dependency/junit-jupiter-params-5.8.1.jar:/app/dependency/joda-time-2.9.2.jar:/app/dependency/junit-platform-engine-1.10.2.jar:/app/classes:/app/test-classes:/app --scan-class-path --details=tree --reports-dir=test-reports"/>
+		<property name="sun.java.launcher" value="SUN_STANDARD"/>
+		<property name="sun.jnu.encoding" value="UTF-8"/>
+		<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+		<property name="user.country" value="US"/>
+		<property name="user.dir" value="/app"/>
+		<property name="user.home" value="/root"/>
+		<property name="user.language" value="en"/>
+		<property name="user.name" value="root"/>
+		<property name="user.timezone" value="GMT"/>
+	</properties>
+	<testcase name="CalculaSalarioNulo()" classname="empleados.EmpleadoBRTest" time="0.002">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[method:CalculaSalarioNulo()]
 display-name: El cálculo con un salario nulo debe lanzar una excepción
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[8]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1660.0&gt; but was: &lt;8300.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1660.0> but was: <8300.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[8]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1660.0&gt; but was: &lt;8300.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1660.0> but was: <8300.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -192,14 +195,18 @@ display-name: El cálculo con un salario nulo debe lanzar una excepción
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#8]
 display-name: [8] encargado, 0, 8, 1660.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[6]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1560.0&gt; but was: &lt;7800.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1560.0> but was: <7800.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[6]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1560.0&gt; but was: &lt;7800.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1560.0> but was: <7800.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -333,14 +340,18 @@ display-name: [8] encargado, 0, 8, 1660.0
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#6]
 display-name: [6] encargado, 999.9, 3, 1560.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[7]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1500.0&gt; but was: &lt;7500.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1500.0> but was: <7500.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[7]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1500.0&gt; but was: &lt;7500.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1500.0> but was: <7500.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -474,14 +485,18 @@ display-name: [6] encargado, 999.9, 3, 1560.0
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#7]
 display-name: [7] encargado, 500, 0, 1500.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[4]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1760.0&gt; but was: &lt;8800.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1760.0> but was: <8800.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[4]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1760.0&gt; but was: &lt;8800.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1760.0> but was: <8800.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -615,14 +630,18 @@ display-name: [7] encargado, 500, 0, 1500.0
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#4]
 display-name: [4] encargado, 1250, 8, 1760.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[5]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1600.0&gt; but was: &lt;8000.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1600.0> but was: <8000.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[5]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1600.0&gt; but was: &lt;8000.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1600.0> but was: <8000.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -756,20 +775,26 @@ display-name: [4] encargado, 1250, 8, 1760.0
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#5]
 display-name: [5] encargado, 1000, 0, 1600.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[7]" classname="empleados.EmpleadoNetoTest" time="0">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[7]" classname="empleados.EmpleadoNetoTest" time="0">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#7]
 display-name: [7] 500, 500
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[2]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1260.0&gt; but was: &lt;6300.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1260.0> but was: <6300.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[2]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1260.0&gt; but was: &lt;6300.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1260.0> but was: <6300.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -903,20 +928,26 @@ display-name: [7] 500, 500
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#2]
 display-name: [2] vendedor, 1500, 3, 1260.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[6]" classname="empleados.EmpleadoNetoTest" time="0">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[6]" classname="empleados.EmpleadoNetoTest" time="0">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#6]
 display-name: [6] 999.9, 999.9
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[3]" classname="empleados.EmpleadoBRTest" time="0">
-<failure message="expected: &lt;1100.0&gt; but was: &lt;5500.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1100.0> but was: <5500.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[3]" classname="empleados.EmpleadoBRTest" time="0">
+		<failure message="expected: &lt;1100.0&gt; but was: &lt;5500.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1100.0> but was: <5500.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -1050,26 +1081,34 @@ display-name: [6] 999.9, 999.9
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#3]
 display-name: [3] vendedor, 1499.99, 0, 1100.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[5]" classname="empleados.EmpleadoNetoTest" time="0">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[5]" classname="empleados.EmpleadoNetoTest" time="0">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#5]
 display-name: [5] 1000, 840
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[4]" classname="empleados.EmpleadoNetoTest" time="0">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[4]" classname="empleados.EmpleadoNetoTest" time="0">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#4]
 display-name: [4] 1250, 1050
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[1]" classname="empleados.EmpleadoBRTest" time="0.007">
-<failure message="expected: &lt;1360.0&gt; but was: &lt;6800.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1360.0> but was: <6800.0>
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioBruto(TipoEmpleado, float, float, float)[1]" classname="empleados.EmpleadoBRTest" time="0.007">
+		<failure message="expected: &lt;1360.0&gt; but was: &lt;6800.0&gt;" type="org.opentest4j.AssertionFailedError">
+			<![CDATA[org.opentest4j.AssertionFailedError: expected: <1360.0> but was: <6800.0>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
@@ -1203,38 +1242,52 @@ display-name: [4] 1250, 1050
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:50)
 	at org.junit.platform.console.ConsoleLauncher.execute(ConsoleLauncher.java:43)
 	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:37)
-]]></failure>
-<system-out><![CDATA[
+]]>
+		</failure>
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoBRTest]/[test-template:CalculaSalarioBruto(empleados.TipoEmpleado, float, float, float)]/[test-template-invocation:#1]
 display-name: [1] vendedor, 2000, 8, 1360.0
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[3]" classname="empleados.EmpleadoNetoTest" time="0">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[3]" classname="empleados.EmpleadoNetoTest" time="0">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#3]
 display-name: [3] 1499.99, 1259.9916
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[2]" classname="empleados.EmpleadoNetoTest" time="0.001">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[2]" classname="empleados.EmpleadoNetoTest" time="0.001">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#2]
 display-name: [2] 1500, 1230
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[1]" classname="empleados.EmpleadoNetoTest" time="0.025">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[1]" classname="empleados.EmpleadoNetoTest" time="0.025">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#1]
 display-name: [1] 2000, 1640
-]]></system-out>
-</testcase>
-<testcase name="CalculaSalarioNE(float, float)[8]" classname="empleados.EmpleadoNetoTest" time="0">
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<testcase name="CalculaSalarioNE(float, float)[8]" classname="empleados.EmpleadoNetoTest" time="0">
+		<system-out>
+			<![CDATA[
 unique-id: [engine:junit-jupiter]/[class:empleados.EmpleadoNetoTest]/[test-template:CalculaSalarioNE(float, float)]/[test-template-invocation:#8]
 display-name: [8] 0, 0
-]]></system-out>
-</testcase>
-<system-out><![CDATA[
+]]>
+		</system-out>
+	</testcase>
+	<system-out>
+		<![CDATA[
 unique-id: [engine:junit-jupiter]
 display-name: JUnit Jupiter
-]]></system-out>
+]]>
+	</system-out>
 </testsuite>
+

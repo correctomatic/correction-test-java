@@ -85,19 +85,16 @@ def parse_junit_xml(file_path):
 
     return num_failed_tests, list(unique_failures)
 
-
-num_failed, failures =  parse_junit_xml('/app/test-reports/TEST-com.acme.EmpleadoBRTest.xml')
-print(f"Failed tests: {num_failed}")
-print(f"Failures: {failures}")
-
-
-
 with open(result_file, 'w') as f:
-    subprocess.run(test_command, stdout=f, text=True)
+    run_result = subprocess.run(test_command, stdout=f, text=True)
 
 # Check if tests were successful
 with open(result_file, 'r') as f:
     results = f.read()
+
+num_failed, failures =  parse_junit_xml('/app/test-reports/TEST-junit-jupiter.xml')
+print(f"Failed tests: {num_failed}")
+print(f"Failures: {failures}")
 
 success = "Test run finished after" in results
 
@@ -105,4 +102,8 @@ success = "Test run finished after" in results
 results_summary = results.split("Test run finished after", 1)[-1].strip()
 
 # Create the JSON output
-print(f'{{ "success": {str(success).lower()}, "results": "{results_summary}" }}')
+success_message = {
+    "success": True,
+    "results": f'{results_summary}'
+}
+print(json.dumps(success_message))
