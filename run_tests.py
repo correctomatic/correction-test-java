@@ -1,8 +1,11 @@
 import os
 import subprocess
 import json
+import shutil
 
 import xml.etree.ElementTree as ET
+import re
+
 
 DEBUG = 'S'
 
@@ -14,7 +17,6 @@ def log(message):
 classpath = ':'.join(
     [os.path.join(dp, f) for dp, dn, filenames in os.walk('/app/dependency') for f in filenames if f.endswith('.jar')]
 ) + ':/app/classes:/app/test-classes:/app'
-result_file = '/tmp/test_results.txt'
 
 log("Copying the student's code...")
 
@@ -58,67 +60,74 @@ log("Compilation successful!")
 log("Running the tests...")
 
 # Run the JUnit Console Launcher to execute the tests
+REPORTS_DIR = 'test-reports'
+REPORTS_FILE = f'{REPORTS_DIR}/TEST-junit-jupiter.xml'
+RESULT_FILE = '/tmp/test_results.txt'
+ERROR_FILE = '/tmp/test_errors.txt'
+
+# Remove the reports directory if it exists
+shutil.rmtree(REPORTS_DIR, ignore_errors=True)
+
 test_command = [
     'java', '-jar', 'junit-platform-console-standalone.jar',
     '--class-path', classpath,
     '--scan-class-path',
-    '--details=tree'
-]
-
-test_command = [
-    'java', '-jar', 'BANANA junit-platform-console-standalone.jar',
-    '--class-path', classpath,
-    '--scan-class-path',
     '--details=tree',
-    '--reports-dir=test-reports',
+    f'--reports-dir={REPORTS_DIR}',
 ]
 
-
-with open(result_file, 'w') as f:
-    run_result = subprocess.run(test_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-
-print('*******************************')
-print(run_result.returncode)
-print('*******************************')
-# Check if tests were successful
-with open(result_file, 'r') as f:
-    results = f.read()
+# We don't need the stdout, because it will generate report files
+with open(os.devnull, 'w') as devnull:
+    run_result = subprocess.run(test_command, stdout=devnull, stderr=subprocess.PIPE, text=True)
 
 
-def parse_junit_xml(file_path):
+# If junit console launcher returns 0, all tests passed
+if run_result.returncode == 0:
+    log('All tests passed')
+    success_message = {
+        'success': True,
+        'grade': 10,
+        'comments': [ 'The code is working properly' ]
+    }
+    print(json.dumps(success_message))
+    # Exit with an OK code, the container succeeded and the correction passed
+    exit(0)
+
+# The console launcher failed. We need to tell apart if the tests failed or the execution failed
+# Content in stderr means that the execution failed
+if run_result.stderr:
+    log(f'Failed to run the tests: {run_result.stderr}')
+    error_message = {
+        'success': False,
+        'error': f'Failed to run the tests: {run_result.stderr}'
+    }
+    print(json.dumps(error_message))
+    # The correction failed, probably because of something wrong in the container
+    exit(1)
+
+# If we reach this point, everything went OK but some tests failed
+# We will parse the JUnit XML file to get the failed tests
+# and return the results as a success correction with errors
+log('Some tests failed, parsing the results...')
+
+def get_failed_tests(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
-    # Find all the <testcase> elements that contain a <failure> child
-    failed_tests = root.findall(".//testcase[failure]")
+    def extract_display_name(text):
+        pattern = re.compile(r"display-name: (.+)")
+        match = pattern.search(text)
+        return match.group(1) if match else None
 
-    unique_failures = set()
+    failure_errors = root.findall('.//testcase[failure]/system-out')
+    failure_descriptions = map(lambda x: extract_display_name(x.text), failure_errors)
+    return list(set(failure_descriptions))
 
-    for testcase in failed_tests:
-        failure_element = testcase.find("failure")
-        if failure_element is not None:
-            # Get the description of the failure
-            description = failure_element.get("message")
-            if description:
-                unique_failures.add(description)
-
-    # Number of failed tests
-    num_failed_tests = len(failed_tests)
-
-    return num_failed_tests, list(unique_failures)
-
-num_failed, failures =  parse_junit_xml('/app/test-reports/TEST-junit-jupiter.xml')
-print(f"Failed tests: {num_failed}")
-print(f"Failures: {failures}")
-
-success = "Test run finished after" in results
-
-# Extract test results
-results_summary = results.split("Test run finished after", 1)[-1].strip()
 
 # Create the JSON output
 success_message = {
-    "success": True,
-    "results": f'{results_summary}'
+    'success': True,
+    'grade': 0,
+    'comments': get_failed_tests(REPORTS_FILE)
 }
 print(json.dumps(success_message))
