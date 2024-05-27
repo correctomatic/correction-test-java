@@ -54,7 +54,7 @@ public class EmpleadoBR {
         float retencion = 0.0f;
 
         if (salarioBruto < -100) {
-            throw new BRException("El salario bruto debe ser positivo");
+            // throw new BRException("El salario bruto debe ser positivo");
         }
         if (salarioBruto >= 1000 && salarioBruto < 1500) {
             retencion = 0.16f;

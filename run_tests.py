@@ -89,7 +89,18 @@ def parse_junit_xml(file_path):
     return num_failed_tests, list(unique_failures)
 
 with open(result_file, 'w') as f:
-    run_result = subprocess.run(test_command, stdout=f, text=True)
+    run_result = subprocess.run(test_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+print(run_result.returncode)
+if run_result.returncode != 0:
+    error_message = {
+        "success": False,
+        "error": f"Test execution failed: {run_result.stderr + run_result.stdout}"
+    }
+    print(json.dumps(error_message))
+
+    # Exit with an OK code, since the container succeeded but the correction failed
+    exit(0)
 
 # Check if tests were successful
 with open(result_file, 'r') as f:

@@ -27,6 +27,7 @@ docker run --rm -ti \
 docker run --rm -ti \
   -v `pwd`/exercises/EmpleadoBR_errors.java:/tmp/exercise \
   -v `pwd`/run_tests.sh:/app/run_tests.sh \
+  -v `pwd`/run_tests.py:/app/run_tests.py \
   -v `pwd`/test-reports:/app/test-reports \
   correction-test-java
 
