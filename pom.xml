@@ -52,12 +52,19 @@
       <version>2.9.2</version>
     </dependency>
 
-    <!-- Allure JUnit 5 integration -->
-    <!-- <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-junit5</artifactId>
-      <version>${allure.version}</version>
-    </dependency> -->
+    <!-- Jackson Databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.17.1</version>
+    </dependency>
+
+    <!-- Jackson Dataformat YAML -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-yaml</artifactId>
+      <version>2.17.1</version>
+    </dependency>
 
   </dependencies>
 
